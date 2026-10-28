@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點擊跳出圖片</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        /* 按鈕樣式 */
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        /* 圖片容器樣式（預設隱藏） */
+        #imageContainer {
+            margin-top: 20px;
+            display: none; 
+        }
+        #imageContainer img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 按鈕 -->
+    <button class="btn" onclick="toggleImage()">點我</button>
+
+    <!-- 2. 圖片區塊（把 src 後面的網址換成你想放的圖片網址或本地路徑） -->
+    <div id="imageContainer">
+        <img src="圖片.jpg" alt="跳出的圖片">
+
+        <!-- <img src="https://picsum.photos" alt="跳出的圖片"> -->
+    </div>
+
+    <!-- 3. 控制跳出的 JavaScript -->
+    <script>
+        function toggleImage() {
+            var container = document.getElementById("imageContainer");
+            // 如果目前是隱藏的，就顯示；如果是顯示的，就隱藏
+            if (container.style.display === "none" || container.style.display === "") {
+                container.style.display = "block";
+            } else {
+                container.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
